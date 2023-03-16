@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+
+<div class="">
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-@ViewBag.Color text-center" role="alert">@ViewBag.Message</div>
+    }
+    @using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "card p-4 mb-3" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="">
+
+            <div class="mb-3">
+                <input type="file" name="fileUpload" accept="application/pdf" class="form-control" />
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Upload" class="btn btn-primary" />
+            </div>
+        </div>
+    }
+    @if (ViewBag.Message == "SUCCESS")
+    {
+        <div class="text-center">
+            <a href="@Url.Action("DownloadExcelFile", "Home", new { fileName = @ViewBag.excel })" class="text-decoration-none">download excel</a>
+        </div>
+        <div class="text-center">
+            <a href="@Url.Action("DownloadPDFFile", "Home", new { fileName = @ViewBag.pdf })" class="text-decoration-none">download pdf</a>
+        </div>
+    }
+</div>

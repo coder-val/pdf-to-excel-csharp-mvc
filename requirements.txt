@@ -1,0 +1,4 @@
+itext7 7.2.5
+ClosedXML 0.100.3
+SixLabors.Fonts 1.0.0
+bootstrap 5.2.3

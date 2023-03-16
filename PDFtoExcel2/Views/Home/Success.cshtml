@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Success";
+}
+
+<h2>Success</h2>
+<div>
+
+</div>
+<a href="@Url.Action("DownloadExcelFile", "Home", new { fileName = @ViewBag.excel })" class="btn btn-primary btn-lg">@ViewBag.excel</a>
+<a href="@Url.Action("DownloadPDFFile", "Home", new { fileName = @ViewBag.pdf })" class="btn btn-primary btn-lg">@ViewBag.pdf</a>
